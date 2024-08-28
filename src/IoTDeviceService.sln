@@ -11,8 +11,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoTDeviceService.Domain", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoTDeviceService.SharedKernel", "IoTDeviceService.SharedKernel\IoTDeviceService.SharedKernel.csproj", "{7FECE1C5-4DCA-40AF-AB28-72B08768476E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoTDeviceService.Tests", "IoTDeviceService.Tests\IoTDeviceService.Tests.csproj", "{661CEB52-B298-4E8C-AFB3-C2A39A1A5281}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoTDeviceService.API", "IoTDeviceService.API\IoTDeviceService.API.csproj", "{3FDC472F-769C-44ED-8C0C-B34AE0629216}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{C22FAC50-FB85-406B-8E36-D4EDDE6FF932}"
@@ -39,10 +37,6 @@ Global
 		{7FECE1C5-4DCA-40AF-AB28-72B08768476E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7FECE1C5-4DCA-40AF-AB28-72B08768476E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7FECE1C5-4DCA-40AF-AB28-72B08768476E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{661CEB52-B298-4E8C-AFB3-C2A39A1A5281}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{661CEB52-B298-4E8C-AFB3-C2A39A1A5281}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{661CEB52-B298-4E8C-AFB3-C2A39A1A5281}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{661CEB52-B298-4E8C-AFB3-C2A39A1A5281}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3FDC472F-769C-44ED-8C0C-B34AE0629216}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3FDC472F-769C-44ED-8C0C-B34AE0629216}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3FDC472F-769C-44ED-8C0C-B34AE0629216}.Release|Any CPU.ActiveCfg = Release|Any CPU
