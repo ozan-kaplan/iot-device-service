@@ -1,0 +1,19 @@
+services:
+  
+  mongodb:
+    image: mongo
+
+  postgresql:
+    image: postgres
+
+  iotdeviceservice.api:
+    image: ${DOCKER_REGISTRY-}iotdeviceserviceapi
+    build:
+      context: .
+      dockerfile: IoTDeviceService.API/Dockerfile
+     
+
+volumes:
+  mongo-data:
+  postgres-data:      
+  

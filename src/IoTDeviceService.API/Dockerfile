@@ -13,6 +13,9 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["IoTDeviceService.API/IoTDeviceService.API.csproj", "IoTDeviceService.API/"]
+COPY ["IoTDeviceService.Application/IoTDeviceService.Application.csproj", "IoTDeviceService.Application/"]
+COPY ["IoTDeviceService.Domain/IoTDeviceService.Domain.csproj", "IoTDeviceService.Domain/"]
+COPY ["IoTDeviceService.Infrastructure/IoTDeviceService.Infrastructure.csproj", "IoTDeviceService.Infrastructure/"]
 RUN dotnet restore "./IoTDeviceService.API/IoTDeviceService.API.csproj"
 COPY . .
 WORKDIR "/src/IoTDeviceService.API"

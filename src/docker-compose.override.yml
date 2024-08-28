@@ -1,0 +1,35 @@
+
+
+services:  
+
+  mongodb: 
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db 
+
+  postgresql:
+    environment:
+        - POSTGRES_USER=admin
+        - POSTGRES_PASSWORD=admin1234
+        - POSTGRES_DB=DeviceServiceDB
+    restart: always
+    ports:
+     - "5432:5432"
+    volumes:
+     - postgres_data:/var/lib/postgresql/data
+  
+
+  iotdeviceservice.api:  
+    container_name: iotdeviceservice.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - DatabaseSettings:ConnectionString=Host=postgresql;Port=5432;Database=DeviceServiceDB;Username=admin;Password=admin1234 
+    ports:
+        - "8000:80"
+    depends_on:
+      - mongodb
+      - postgresql
+ 
+    
+      
