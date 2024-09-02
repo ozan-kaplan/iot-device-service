@@ -8,11 +8,11 @@
 
   <ItemGroup>
     <Folder Include="Commands\Validators\" />
-    <Folder Include="Mapping\" />
     <Folder Include="Queries\Validators\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
     <PackageReference Include="MediatR" Version="12.4.0" />
   </ItemGroup>
 

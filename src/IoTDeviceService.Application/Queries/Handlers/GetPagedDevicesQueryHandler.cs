@@ -1,11 +1,12 @@
-﻿using IoTDeviceService.Application.Interfaces.Repositories;
+﻿using AutoMapper;
+using IoTDeviceService.Application.Interfaces.Repositories;
 using IoTDeviceService.Application.Models;
 using IoTDeviceService.Domain.Entities;
 using MediatR;
 
 namespace IoTDeviceService.Application.Queries.Handlers
 {
-    public class GetPagedDevicesQuery : IRequest<PagedResultModel<Device>>
+    public class GetPagedDevicesQuery : IRequest<PagedResultModel<DeviceDto>>
     {
         public PagedQueryModel QueryModel { get; set; }
 
@@ -15,19 +16,21 @@ namespace IoTDeviceService.Application.Queries.Handlers
         }
     }
 
-    public class GetPagedDevicesQueryHandler : IRequestHandler<GetPagedDevicesQuery, PagedResultModel<Device>>
+    public class GetPagedDevicesQueryHandler : IRequestHandler<GetPagedDevicesQuery, PagedResultModel<DeviceDto>>
     {
 
         private readonly List<string> validColumns = new List<string> { "Name", "SerialNumber" };
 
         private readonly IDeviceRepository _deviceRepository;
+        private readonly IMapper _mapper;
 
-        public GetPagedDevicesQueryHandler(IDeviceRepository deviceRepository)
+        public GetPagedDevicesQueryHandler(IDeviceRepository deviceRepository, IMapper mapper)
         {
             _deviceRepository = deviceRepository;
+            _mapper = mapper;
         }
 
-        public async Task<PagedResultModel<Device>> Handle(GetPagedDevicesQuery request, CancellationToken cancellationToken)
+        public async Task<PagedResultModel<DeviceDto>> Handle(GetPagedDevicesQuery request, CancellationToken cancellationToken)
         {
 
             if (request.QueryModel.Filters != null)
@@ -41,12 +44,11 @@ namespace IoTDeviceService.Application.Queries.Handlers
                 }
             }
 
-
-            return await _deviceRepository.GetPagedAsync(
-                request.QueryModel.PageNumber,
-                request.QueryModel.PageSize,
-                request.QueryModel.Sort,
-                request.QueryModel.Filters);
+            return _mapper.Map<PagedResultModel<DeviceDto>>(await _deviceRepository.GetPagedAsync(
+                   request.QueryModel.PageNumber,
+                   request.QueryModel.PageSize,
+                   request.QueryModel.Sort,
+                   request.QueryModel.Filters));
         }
     }
 }

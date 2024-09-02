@@ -19,6 +19,7 @@ builder.Services.AddScoped<IDeviceRepository, DeviceRepository>();
 
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
 
+builder.Services.AddAutoMapper(typeof(Program).Assembly);
 
 app.UseHttpsRedirection();
 app.UseAuthorization();

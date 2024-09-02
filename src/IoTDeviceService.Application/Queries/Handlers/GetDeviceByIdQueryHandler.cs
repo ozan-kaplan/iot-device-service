@@ -1,10 +1,12 @@
-﻿using IoTDeviceService.Application.Interfaces.Repositories;
+﻿using AutoMapper;
+using IoTDeviceService.Application.Interfaces.Repositories;
+using IoTDeviceService.Application.Models;
 using IoTDeviceService.Domain.Entities;
 using MediatR;
 
 namespace IoTDeviceService.Application.Queries.Handlers
 {
-    public class GetDeviceByIdQuery : IRequest<Device>
+    public class GetDeviceByIdQuery : IRequest<DeviceDto>
     {
         public Guid Id { get; set; }
 
@@ -13,18 +15,20 @@ namespace IoTDeviceService.Application.Queries.Handlers
             Id = id;
         }
     }
-    public class GetDeviceByIdQueryHandler : IRequestHandler<GetDeviceByIdQuery, Device?>
+    public class GetDeviceByIdQueryHandler : IRequestHandler<GetDeviceByIdQuery, DeviceDto?>
     {
         private readonly IDeviceRepository _deviceRepository;
+        private readonly IMapper _mapper;
 
-        public GetDeviceByIdQueryHandler(IDeviceRepository deviceRepository)
+        public GetDeviceByIdQueryHandler(IDeviceRepository deviceRepository, IMapper mapper)
         {
             _deviceRepository = deviceRepository;
+            _mapper = mapper;
         }
 
-        public async Task<Device?> Handle(GetDeviceByIdQuery request, CancellationToken cancellationToken)
-        {
-            return await _deviceRepository.GetByIdAsync(request.Id);
+        public async Task<DeviceDto?> Handle(GetDeviceByIdQuery request, CancellationToken cancellationToken)
+        {  
+            return _mapper.Map<DeviceDto>(await _deviceRepository.GetByIdAsync(request.Id));
         }
     }
 }
