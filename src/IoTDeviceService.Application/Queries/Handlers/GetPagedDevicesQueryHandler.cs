@@ -19,7 +19,7 @@ namespace IoTDeviceService.Application.Queries.Handlers
     public class GetPagedDevicesQueryHandler : IRequestHandler<GetPagedDevicesQuery, PagedResultModel<DeviceDto>>
     {
 
-        private readonly List<string> validColumns = new List<string> { "Name", "SerialNumber" };
+        private readonly List<string> _validColumns = new List<string> { "Name", "SerialNumber", "CustomerId" };
 
         private readonly IDeviceRepository _deviceRepository;
         private readonly IMapper _mapper;
@@ -37,7 +37,7 @@ namespace IoTDeviceService.Application.Queries.Handlers
             {
                 foreach (var filter in request.QueryModel.Filters.Keys)
                 {
-                    if (!validColumns.Contains(filter))
+                    if (!_validColumns.Contains(filter))
                     {
                         throw new ArgumentException($"Invalid filter column: {filter}");
                     }
