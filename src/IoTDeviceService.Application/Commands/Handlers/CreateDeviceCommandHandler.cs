@@ -1,16 +1,12 @@
 ﻿using IoTDeviceService.Application.Interfaces.Repositories;
 using IoTDeviceService.Domain.Entities;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace IoTDeviceService.Application.Commands.Handlers
 {
     public class CreateDeviceCommand : IRequest<Guid>
     {
+        public Guid CustomerId { get; set; }
         public required string Name { get; set; }
         public required string SerialNumber { get; set; }
     }
@@ -29,6 +25,7 @@ namespace IoTDeviceService.Application.Commands.Handlers
             var device = new Device
             {
                 Id = Guid.NewGuid(),
+                CustomerId = request.CustomerId,
                 Name = request.Name,
                 SerialNumber = request.SerialNumber,
                 Status = DeviceStatus.Active,

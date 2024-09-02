@@ -9,13 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoTDeviceService.Infrastruc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoTDeviceService.Domain", "IoTDeviceService.Domain\IoTDeviceService.Domain.csproj", "{D16CA501-AB56-4DC1-BFE5-5F3EBD999A4B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoTDeviceService.SharedKernel", "IoTDeviceService.SharedKernel\IoTDeviceService.SharedKernel.csproj", "{7FECE1C5-4DCA-40AF-AB28-72B08768476E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoTDeviceService.API", "IoTDeviceService.API\IoTDeviceService.API.csproj", "{3FDC472F-769C-44ED-8C0C-B34AE0629216}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoTDeviceService.API", "IoTDeviceService.API\IoTDeviceService.API.csproj", "{3FDC472F-769C-44ED-8C0C-B34AE0629216}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{C22FAC50-FB85-406B-8E36-D4EDDE6FF932}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoTDeviceService.Tests", "IoTDeviceService.Tests\IoTDeviceService.Tests.csproj", "{B9A43AE7-9C43-455C-9F67-CF83B56DF3B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoTDeviceService.Tests", "IoTDeviceService.Tests\IoTDeviceService.Tests.csproj", "{B9A43AE7-9C43-455C-9F67-CF83B56DF3B7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +33,6 @@ Global
 		{D16CA501-AB56-4DC1-BFE5-5F3EBD999A4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D16CA501-AB56-4DC1-BFE5-5F3EBD999A4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D16CA501-AB56-4DC1-BFE5-5F3EBD999A4B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7FECE1C5-4DCA-40AF-AB28-72B08768476E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7FECE1C5-4DCA-40AF-AB28-72B08768476E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7FECE1C5-4DCA-40AF-AB28-72B08768476E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7FECE1C5-4DCA-40AF-AB28-72B08768476E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3FDC472F-769C-44ED-8C0C-B34AE0629216}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3FDC472F-769C-44ED-8C0C-B34AE0629216}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3FDC472F-769C-44ED-8C0C-B34AE0629216}.Release|Any CPU.ActiveCfg = Release|Any CPU
