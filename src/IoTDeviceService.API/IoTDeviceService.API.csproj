@@ -16,11 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="DTOs\" />
-    <Folder Include="Extensions\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\IoTDeviceService.Application\IoTDeviceService.Application.csproj" />
     <ProjectReference Include="..\IoTDeviceService.Infrastructure\IoTDeviceService.Infrastructure.csproj" />
   </ItemGroup>
