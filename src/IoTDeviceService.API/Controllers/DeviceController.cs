@@ -1,8 +1,9 @@
-﻿using IoTDeviceService.Application.Commands.Handlers;
+﻿using IoTDeviceService.Application.Features.Commands.CreateDevice;
+using IoTDeviceService.Application.Features.Commands.UpdateDevice;
+using IoTDeviceService.Application.Features.Queries.GetDeviceById;
+using IoTDeviceService.Application.Features.Queries.GetPagedDevices;
 using IoTDeviceService.Application.Models;
-using IoTDeviceService.Application.Queries.Handlers;
 using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace IoTDeviceService.API.Controllers

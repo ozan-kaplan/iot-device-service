@@ -1,14 +1,7 @@
 ﻿using IoTDeviceService.Application.Interfaces.Repositories;
 using MediatR;
-namespace IoTDeviceService.Application.Commands.Handlers
-{
-    public class UpdateDeviceCommand : IRequest<bool>
-    {
-        public Guid Id { get; set; } 
-        public required string Name { get; set; }
-        public required string SerialNumber { get; set; }
-    }
-
+namespace IoTDeviceService.Application.Features.Commands.UpdateDevice
+{ 
     public class UpdateDeviceCommandHandler : IRequestHandler<UpdateDeviceCommand, bool>
     {
         private readonly IDeviceRepository _deviceRepository;

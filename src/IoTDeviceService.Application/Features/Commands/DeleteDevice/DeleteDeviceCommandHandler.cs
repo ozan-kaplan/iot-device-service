@@ -1,12 +1,8 @@
 ﻿using IoTDeviceService.Application.Interfaces.Repositories;
 using MediatR;
 
-namespace IoTDeviceService.Application.Commands.Handlers
-{
-    public class DeleteDeviceCommand : IRequest<bool>
-    {
-        public Guid Id { get; set; }
-    } 
+namespace IoTDeviceService.Application.Features.Commands.DeleteDevice
+{ 
 
     public class DeleteDeviceCommandHandler : IRequestHandler<DeleteDeviceCommand, bool>
     {
@@ -25,8 +21,8 @@ namespace IoTDeviceService.Application.Commands.Handlers
 
             device.UpdatedAt = DateTime.Now;
             device.IsDeleted = true;
-             
-            await _deviceRepository.UpdateAsync(device);  
+
+            await _deviceRepository.UpdateAsync(device);
 
             return true;
         }

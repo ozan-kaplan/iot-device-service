@@ -2,14 +2,8 @@
 using IoTDeviceService.Domain.Entities;
 using MediatR;
 
-namespace IoTDeviceService.Application.Commands.Handlers
+namespace IoTDeviceService.Application.Features.Commands.CreateDevice
 {
-    public class CreateDeviceCommand : IRequest<Guid>
-    {
-        public Guid CustomerId { get; set; }
-        public required string Name { get; set; }
-        public required string SerialNumber { get; set; }
-    }
 
     public class CreateDeviceCommandHandler : IRequestHandler<CreateDeviceCommand, Guid>
     {

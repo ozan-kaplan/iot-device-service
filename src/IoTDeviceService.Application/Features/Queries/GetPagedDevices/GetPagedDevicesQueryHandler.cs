@@ -4,18 +4,8 @@ using IoTDeviceService.Application.Models;
 using IoTDeviceService.Domain.Entities;
 using MediatR;
 
-namespace IoTDeviceService.Application.Queries.Handlers
-{
-    public class GetPagedDevicesQuery : IRequest<PagedResultModel<DeviceDto>>
-    {
-        public PagedQueryModel QueryModel { get; set; }
-
-        public GetPagedDevicesQuery(PagedQueryModel queryModel)
-        {
-            QueryModel = queryModel;
-        }
-    }
-
+namespace IoTDeviceService.Application.Features.Queries.GetPagedDevices
+{  
     public class GetPagedDevicesQueryHandler : IRequestHandler<GetPagedDevicesQuery, PagedResultModel<DeviceDto>>
     {
 
