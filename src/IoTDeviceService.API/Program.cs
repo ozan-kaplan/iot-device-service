@@ -2,7 +2,6 @@ using IoTDeviceService.Application.Interfaces.Repositories;
 using IoTDeviceService.Infrastructure.Persistence.Context;
 using IoTDeviceService.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);

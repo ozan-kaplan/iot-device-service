@@ -1,4 +1,5 @@
 ﻿using IoTDeviceService.Application.Features.Commands.CreateDevice;
+using IoTDeviceService.Application.Features.Commands.DeleteDevice;
 using IoTDeviceService.Application.Features.Commands.UpdateDevice;
 using IoTDeviceService.Application.Features.Queries.GetDeviceById;
 using IoTDeviceService.Application.Features.Queries.GetPagedDevices;
@@ -59,6 +60,13 @@ namespace IoTDeviceService.API.Controllers
                 return NotFound();
             }
 
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteDevice(Guid id)
+        {
+            await _mediator.Send(new DeleteDeviceCommand(id));
             return NoContent();
         }
     }

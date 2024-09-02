@@ -9,6 +9,10 @@ namespace IoTDeviceService.Application.Features.Commands.DeleteDevice
 {
     public class DeleteDeviceCommand : IRequest<bool>
     {
+        public DeleteDeviceCommand(Guid id)
+        {
+            Id = id;   
+        }
         public Guid Id { get; set; }
     }
 }
